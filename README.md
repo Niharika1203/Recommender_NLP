@@ -4,16 +4,18 @@ The data collected is described below and can be downloaded from Kaggle: Content
 The file "shared_articles" contains information about the articles shared in the platform.
 Each article has its sharing date (timestamp), the original url, title, content in plain text, the article language (Portuguese - pt or English - en) and information about the user who shared the article (author).
 There are two possible event types at a given timestamp:
-● CONTENT SHARED: The article was shared in the platform and is available for users.
-● CONTENT REMOVED: The article was removed from the platform.
+
+-  CONTENT SHARED: The article was shared in the platform and is available for users.
+-  CONTENT REMOVED: The article was removed from the platform.
+
 Interactions:
 This file user_interactions contains logs of user interactions on shared articles. It can be joined to
 shared_articles.csv by contentId column. The eventType values are:
-● VIEW: The user has opened the article.
-● LIKE: The user has liked the article.
-● COMMENT CREATED: The user created a comment in the article.
-● FOLLOW: The user chose to be notified on any new comment in the article.
-● BOOKMARK: The user has bookmarked the article for easy return in the future.
+- VIEW: The user has opened the article.
+- LIKE: The user has liked the article.
+- COMMENT CREATED: The user created a comment in the article.
+- FOLLOW: The user chose to be notified on any new comment in the article.
+- BOOKMARK: The user has bookmarked the article for easy return in the future.
 Some internal analysis has revealed that the metric representing virality is described as follows: VIRALITY = 1* VIEW + 4*LIKE + 10*COMMENT + 25*FOLLOW + 100*BOOKMARK
 You’re to build a model that can predict virality of a new article being posted on the platform so that the news feed product can your model to showcase new articles.
 
